@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Form</title>
+  <script>
+    function validateForm() {
+      const name = document.forms["contactForm"]["name"].value;
+      const email = document.forms["contactForm"]["email"].value;
+      if (name === "" || email === "") {
+        alert("Both fields must be filled out.");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <h2>Contact Us</h2>
+  <form name="contactForm" action="process.php" method="POST" onsubmit="return validateForm()">
+    Name: <input type="text" name="name"><br><br>
+    Email: <input type="email" name="email"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
+
